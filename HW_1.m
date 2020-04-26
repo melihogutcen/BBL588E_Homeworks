@@ -71,10 +71,6 @@ figure,subplot 221; imshow(f_I_1); title("3x3 LPF Std=1");
 subplot 222; imshow(f_I_5); title("3x3 LPF Std=5");
 subplot 223; imshow(f_I_10); title("3x3 LPF Std=10");
 subplot 224; imshow(f_I_20); title("3x3 LPF Std=20");
-corr2(I_1,gray)
-corr2(I_5,gray)
-corr2(I_10,gray)
-corr2(I_20,gray)
 %% 8.2 5x5 filter
 f2_I_1 = imfilter(I_1,lpf_2);
 f2_I_5 = imfilter(I_5,lpf_2);
