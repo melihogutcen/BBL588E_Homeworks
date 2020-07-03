@@ -18,9 +18,9 @@ from sklearn.metrics import jaccard_similarity_score
 
 
 # load the image and labelling
-label = scipy.io.loadmat('image_label2.mat')
+label = scipy.io.loadmat('./labels/image_label2.mat')
 label = label['label'].tolist()[0] # ROI of bee
-image = img_as_float(plt.imread("ITU_Golet_Ari.jpeg"))
+image = img_as_float(plt.imread("./labels/ITU_Golet_Ari.jpeg"))
 image = image[label[1]:label[1]+1+label[3],label[0]:label[0]+label[2]+1,:]
 # loop over the number of segments
 for numSegments in (3, 9, 10):
@@ -43,7 +43,7 @@ plt.imshow(bee_region)
 plt.title("Segmented Bee Region")
 #%% Evaluation
 
-groundtruth_img = scipy.io.loadmat("maxarea.mat")
+groundtruth_img = scipy.io.loadmat("./labels/maxarea.mat")
 groundtruth_img = groundtruth_img["maxarea"]
 segmented_img = bee_region
 flat_groundtruth = groundtruth_img.ravel()
